@@ -75,8 +75,8 @@ export class TasksComponent implements OnInit {
       task: this.task,
       expiry_date: this.expiry_date,
       user: this.user,
-      important: this.importantFlag
-
+      important: this.importantFlag,
+      created_at: new Date().toISOString().slice(0, 10)
     })
     this._toast.openSnackBar('Task Added', 1)
     this.task = ''
