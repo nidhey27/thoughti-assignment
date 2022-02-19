@@ -35,7 +35,7 @@
           <label for="inlineFormInputName">Expiry Date</label>
         </div>
         <div class="col">
-          <select class="form-control" name="user" [(ngModel)]="user">
+          <select class="form-control form-select" name="user" [(ngModel)]="user">
             <option value="0">Select User</option>
             <option *ngFor="let u of users" value="{{ u }}">{{ u }}</option>
           </select>
@@ -77,7 +77,7 @@
         <td>
             <!-- {{ t.user }} -->
 
-            <select disabled class="form-control" name="user" [(ngModel)]="t.user">
+            <select disabled class="form-control form-select" name="user" [(ngModel)]="t.user">
                 <option value="0">Select User</option>
                 <option *ngFor="let u of users" value="{{ u }}">{{ u }}</option>
               </select>
