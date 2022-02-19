@@ -1,0 +1,85 @@
+<div class="container border ">
+  <form class="form-inline ">
+    <fieldset class="">
+      <legend class="w-auto text-left">User Task</legend>
+
+      <div class="row">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            name="task"
+            id="inlineFormInputName"
+            placeholder="Ex: Task 1"
+            pInputTextArea
+            [(ngModel)]="task"
+            (ngModelChange)="valueChange(task)"
+            maxlength="200"
+          />
+
+          <label for="inlineFormInputName" style="width: 100%; position: relative;"
+            >Task
+            <small style="position: aboslute; left: 100%"
+              >{{ words }} / 200</small
+            ></label
+          >
+        </div>
+        <div class="col">
+          <input
+            type="date"
+            class="form-control"
+            name="expiry_date"
+            id="inlineFormInputName"
+            [(ngModel)]="expiry_date"
+          />
+          <label for="inlineFormInputName">Expiry Date</label>
+        </div>
+        <div class="col">
+          <select class="form-control" name="user" [(ngModel)]="user">
+            <option value="0">Select User</option>
+            <option *ngFor="let u of users" value="{{ u }}">{{ u }}</option>
+          </select>
+          <label for="inlineFormInputName">Users</label>
+        </div>
+        <div class="col-1">
+          <button class="btn" (click)="markImportant()">
+            <i #flag class="fa fa-flag-o fa-2x"></i>
+          </button>
+          <br />
+          <label for="inlineFormInputName">Important</label>
+        </div>
+        <div class="col">
+          <!-- <button class="btn btn-primary w-100">Submit</button> -->
+          <button (click)="submit()" mat-raised-button class="w-100" color="primary">
+            Submit
+          </button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  <hr>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Task</th>
+        <th scope="col">Expiry Date</th>
+        <th scope="col">User</th>
+        <th scope="col">Important</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of tasks; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ t.task }}</td>
+        <td>{{ t.expiry_date | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ t.user }}</td>
+        <td><i [ngClass]="{'fa-flag': t.important == true, 'fa-flag-o': t.important == false}" class="fa  fa-2x"></i></td>
+        <td><button (click)="removeTask(i)" class="btn"><i  class="fa fa-minus-circle  fa-2x"></i></button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+</div>

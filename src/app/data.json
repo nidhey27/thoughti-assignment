@@ -1,0 +1,32 @@
+[
+    {
+        "users": [
+            "User-1",
+            "User-2",
+            "User-3"
+        ],
+        "tasks": [
+            {
+                "task": "Task-1",
+                "expiry_date": "2022-03-01",
+                "user": "User-1",
+                "important": true,
+                "created_at": "2020-01-01"
+            },
+            {
+                "task": "Task-2",
+                "expiry_date": "2022-03-01",
+                "user": "User-2",
+                "important": false,
+                "created_at": "2020-01-01"
+            },
+            {
+                "task": "Task-3",
+                "expiry_date": "2022-03-01",
+                "user": "User-2",
+                "important": false,
+                "created_at": "2020-01-01"
+            }
+        ]
+    }
+]
