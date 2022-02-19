@@ -26,6 +26,8 @@ export class TasksComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(data)
+
+    this._toast.openSnackBar(`You have ${ this.tasks.filter((x: any)=>{return x.important === true }).length } Important Tasks  `, 2)
   }
 
   // Count Task Words

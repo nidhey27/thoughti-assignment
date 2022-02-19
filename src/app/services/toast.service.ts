@@ -20,8 +20,8 @@ export class ToastService {
     this._snackBar.open(message, 'X', {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
-      duration: 2 * 1000,
-      panelClass: [action == 0 ? 'bg-danger' : action == 1 ? 'bg-success': '' ,'text-white']
+      duration: 4 * 1000,
+      panelClass: [action == 0 ? 'bg-danger' : action == 1 ? 'bg-success': 'bg-warning' ,'text-white']
     });
   }
 }
